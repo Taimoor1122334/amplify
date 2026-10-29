@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@source "../index.html";
+
+/*
+  Gotham (Typekit family: "gotham")
+  Book 400 · Medium 500 · Bold 700
+  Use font-book, font-medium, or font-bold on each element.
+*/
+@theme {
+  --font-sans: "gotham", sans-serif;
+  --font-weight-book: 400;
+  --color-brand: #0077ff;
+  --color-brand-hover: #1a88ff;
+  --color-nav: #e4e4e4;
+  --color-muted: #a3a3a3;
+  --color-ink: #ffffff;
+}
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply bg-black font-book text-ink;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16;
+  }
+
+  .hero {
+    background-color: #05070e;
+    background-image: url("../assets/images/image background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-5 py-2.5 text-[15px] leading-none font-medium text-white transition-colors hover:bg-brand-hover;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-[15px] leading-none font-medium text-[#0c1322] transition-colors hover:bg-[#e6e6e6];
+  }
+
+  .nav-link {
+    @apply text-[13px] leading-none font-book text-nav transition-colors hover:text-white sm:text-[15px];
+  }
+
+  .audience-link {
+    @apply inline-flex items-center text-[15px] leading-none font-book text-muted transition-colors hover:text-white;
+  }
+
+  .eyebrow {
+    @apply text-[12px] leading-none font-medium tracking-[0.16em] text-brand uppercase sm:text-[13px];
+  }
+
+  .prompt {
+    @apply text-[16px] leading-none font-book text-white;
+  }
+
+  .heading-display {
+    @apply font-bold leading-[1.08] tracking-[-0.02em] text-white;
+    font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  }
+
+  .heading-section {
+    @apply max-w-[720px] font-bold leading-[1.2] tracking-[-0.02em] text-white;
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  }
+
+  .text-lead {
+    @apply max-w-[560px] text-[18px] leading-[1.55] font-book text-white;
+  }
+
+  .text-link {
+    @apply text-[15px] leading-none font-book text-nav transition-colors hover:text-white;
+  }
+
+  .kicker {
+    @apply text-[12px] leading-none font-medium tracking-[0.16em] uppercase sm:text-[13px];
+  }
+
+  .panel {
+    @apply rounded-3xl border border-[#4C5672] bg-[#0E111A] px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-11;
+  }
+
+  .media-frame {
+    @apply flex aspect-[5/4] items-center justify-center rounded-2xl border  border-[#4C5672] bg-[#171C29];
+  }
+
+  .output-card {
+    @apply flex min-h-[128px] flex-col items-center justify-center gap-3 rounded-2xl border border-[#4C5672] bg-[#171C29] px-4 py-5 text-center text-[14px] leading-snug font-medium text-white;
+  }
+
+  .feature-item {
+    @apply flex items-start gap-3 text-[15px] leading-snug font-book text-white;
+  }
+
+  .feature-item::before {
+    content: "";
+    @apply mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand;
+  }
+
+  .price-card {
+    @apply flex h-full flex-col rounded-2xl border border-[#4C5672] bg-[#0E111A] px-6 py-7 text-left;
+  }
+
+  .price-card-popular {
+    @apply border-2 border-brand bg-[#10182c];
+  }
+
+  .plan-item {
+    @apply flex items-start gap-2.5 text-[15px] leading-snug font-book text-white;
+  }
+
+  .plan-item::before {
+    content: "";
+    @apply mt-0.5 h-4 w-4 shrink-0 bg-brand;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 12.2 2.4 8.4l1.2-1.2 2.6 2.6 5.2-5.2 1.2 1.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 12.2 2.4 8.4l1.2-1.2 2.6 2.6 5.2-5.2 1.2 1.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+}

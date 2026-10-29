@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplify Studio</title>
+    <link rel="stylesheet" href="https://use.typekit.net/xhz4psl.css">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body>
+    <section class="hero flex min-h-screen flex-col" id="top">
+        <header class="wrap flex flex-wrap items-center justify-between gap-y-4 py-5 lg:py-6">
+            <a href="#top" class="shrink-0">
+                <img src="assets/images/amplify logo.png" alt="Amplify Studio" class="h-11 w-auto sm:h-12">
+            </a>
+            <div class="flex items-center gap-8 lg:gap-14">
+                <nav class="hidden items-center gap-8 lg:flex lg:gap-14" aria-label="Primary">
+                    <a class="nav-link" href="#top">Home</a>
+                    <a class="nav-link" href="#how-it-works">How it Works</a>
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </nav>
+                <a class="btn shrink-0" href="#trial">Start Free Trial</a>
+            </div>
+            <nav class="flex w-full basis-full flex-wrap items-center justify-end gap-x-4 gap-y-2 lg:hidden" aria-label="Primary">
+                <a class="nav-link" href="#top">Home</a>
+                <a class="nav-link" href="#how-it-works">How it Works</a>
+                <a class="nav-link" href="#features">Features</a>
+                <a class="nav-link" href="#pricing">Pricing</a>
+                <a class="nav-link" href="#faq">FAQ</a>
+            </nav>
+        </header>
+
+        <div class="flex flex-1 flex-col items-center justify-center px-6 pt-8 pb-16 text-center">
+            <p class="eyebrow">One recording. Endless possibilities.</p>
+            <p class="prompt mt-4">What Do You Want To Amplify?</p>
+
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3" role="tablist" aria-label="Audience">
+                <button type="button" class="btn" role="tab" data-audience="churches" aria-selected="true">Churches</button>
+                <button type="button" class="audience-link" role="tab" data-audience="businesses" aria-selected="false">Businesses</button>
+                <button type="button" class="audience-link" role="tab" data-audience="speakers" aria-selected="false">Speakers</button>
+                <button type="button" class="audience-link" role="tab" data-audience="educators" aria-selected="false">Educators</button>
+                <button type="button" class="audience-link" role="tab" data-audience="creators" aria-selected="false">Creators</button>
+            </div>
+
+            <h1 class="heading-display mt-12 max-w-5xl lg:mt-14" id="hero-title">Your sermon deserves more<br class="hidden sm:block">than Sunday.</h1>
+            <p class="text-lead mt-5" id="hero-text">Turn one sermon into a full week of ministry content, in<br class="hidden sm:block">minutes, not hours.</p>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+                <a class="btn" id="trial" href="#trial">Start your 14-day free trial</a>
+                <a class="text-link" href="#see-it-in-action">See it in action</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#05070e] py-16 lg:py-24" id="see-it-in-action">
+        <div class="wrap">
+            <div class="panel">
+                <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,340px)_auto_minmax(0,1fr)] lg:gap-x-8">
+                    <p class="kicker text-nav lg:col-start-1 lg:row-start-1">See what one recording becomes</p>
+
+                    <div class="media-frame lg:col-start-1 lg:row-start-2">
+                        <img src="assets/images/Play button.svg" alt="" class="h-16 w-16">
+                    </div>
+
+                    <div class="lg:col-start-1 lg:row-start-3">
+                        <p class="eyebrow">Sunday sermon</p>
+                        <h2 class="mt-2 text-[22px] leading-tight font-medium text-white">The Power of Faith</h2>
+                        <p class="mt-1.5 text-sm font-book text-muted">42 Minutes</p>
+                    </div>
+
+                    <img src="assets/images/right arrow.svg" alt="" class="mx-auto h-8 w-8 rotate-90 lg:col-start-2 lg:row-start-2 lg:self-center lg:rotate-0">
+
+                    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-start-3 lg:row-start-2 lg:grid-cols-3">
+                        <li class="output-card">
+                            <img src="assets/images/Clips.png" alt="" class="h-14 w-14">
+                            3 Captioned Clips
+                        </li>
+                        <li class="output-card">
+                            <img src="assets/images/devotionals.png" alt="" class="h-14 w-14">
+                            5 Day Devotionals
+                        </li>
+                        <li class="output-card">
+                            <img src="assets/images/bible study guide.png" alt="" class="h-14 w-14">
+                            Bible Study Guide
+                        </li>
+                        <li class="output-card">
+                            <img src="assets/images/sermon summary.png" alt="" class="h-14 w-14">
+                            Sermon Summary
+                        </li>
+                        <li class="output-card">
+                            <img src="assets/images/social posts.png" alt="" class="h-14 w-14">
+                            Social Posts
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#05070e] py-12 lg:py-16  " id="for-churches">
+        <div class="wrap grid items-start gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(240px,0.65fr)] lg:gap-x-24">
+            <div>
+                <p class="eyebrow">For churches &amp; ministries</p>
+                <h2 class="heading-section mt-5">You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.</h2>
+                <p class="mt-6 max-w-[640px] text-[17px] leading-[1.65] font-book text-white">Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.</p>
+                <a class="btn mt-8" href="#trial">Amplify Your Sermon</a>
+            </div>
+            <div class="lg:pt-9">
+                <p class="kicker text-[#c8c8c8]">What Amplify creates</p>
+                <ul class="mt-6 space-y-3.5">
+                    <li class="feature-item">Sermon clips with automatic captions</li>
+                    <li class="feature-item">Five-day devotionals</li>
+                    <li class="feature-item">Bible study materials</li>
+                    <li class="feature-item">Sermon summaries</li>
+                    <li class="feature-item">Social media posts and captions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#05070e] py-16 lg:py-24" id="how-it-works">
+        <div class="wrap">
+            <p class="eyebrow">How it works</p>
+            <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Three steps. Endless possibilities.</h2>
+
+            <ol class="mt-10 grid gap-10 sm:grid-cols-3 lg:mt-12 lg:gap-14">
+                <li>
+                    <p class="text-sm font-bold text-brand">01</p>
+                    <h3 class="mt-2 text-lg font-bold text-white">Upload</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Add a video or audio recording, or paste a link. [CONFIRM formats, YouTube/Vimeo links and maximum length]</p>
+                </li>
+                <li>
+                    <p class="text-sm font-bold text-brand">02</p>
+                    <h3 class="mt-2 text-lg font-bold text-white">Transform</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Amplify finds the strongest moments and creates clips and written content from your own words.</p>
+                </li>
+                <li>
+                    <p class="text-sm font-bold text-brand">03</p>
+                    <h3 class="mt-2 text-lg font-bold text-white">Share</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Review everything, edit what you want, then download and share it wherever your audience is.</p>
+                </li>
+            </ol>
+
+            <div class="mx-auto mt-24 max-w-3xl text-center lg:mt-36">
+                <h2 class="font-bold leading-[1.15] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Less time creating.<br>More time making an impact.</h2>
+                <p class="mx-auto mt-6 max-w-[680px] text-[17px] leading-[1.65] font-book text-white">Your time is valuable. Amplify takes the hours out of rewatching recordings, cutting clips and rewriting the same message for every channel. Whether you're preaching, teaching, presenting or building a business, you get to focus on what you do best.</p>
+                <p class="mt-6 text-[17px] font-medium text-brand">You create the message. Amplify multiplies its reach.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#05070e] py-8 lg:py-10 pb-20 lg:pb-30" id="pricing">
+        <div class="wrap">
+            <div class="text-center">
+                <p class="eyebrow">Pricing</p>
+                <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Powerful content creation. Simple pricing.</h2>
+                <p class="mt-4 text-[18px] font-medium text-white">Every plan starts with a 14-day free trial.</p>
+            </div>
+
+            <div class="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+                <article class="price-card">
+                    <h3 class="text-xl font-bold text-white">Starter</h3>
+                    <p class="mt-1 text-sm font-book text-muted">One voice, one recording a week</p>
+                    <p class="mt-6"><span class="text-[42px] leading-none font-bold text-white">$39</span><span class="text-sm font-book text-muted">/month</span></p>
+                    <ul class="mt-6 flex-1 space-y-2.5">
+                        <li class="plan-item">4 recordings per month</li>
+                        <li class="plan-item">Up to 25 video clips</li>
+                        <li class="plan-item">AI content creation</li>
+                        <li class="plan-item">Automatic captions</li>
+                        <li class="plan-item">Downloadable content</li>
+                        <li class="plan-item">1 user</li>
+                    </ul>
+                    <a class="btn-light mt-8 self-start" href="#trial">Start Free Trial</a>
+                </article>
+
+                <article class="price-card price-card-popular">
+                    <div class="flex items-start justify-between gap-3">
+                        <h3 class="text-xl font-bold text-white">Plus</h3>
+                        <span class="rounded-md bg-brand px-2.5 py-1 text-[11px] leading-none font-medium text-white">Most Popular</span>
+                    </div>
+                    <p class="mt-1 text-sm font-book text-muted">Small teams publishing every week</p>
+                    <p class="mt-6"><span class="text-[42px] leading-none font-bold text-white">$59</span><span class="text-sm font-book text-muted">/month</span></p>
+                    <ul class="mt-6 flex-1 space-y-2.5">
+                        <li class="plan-item">10 recordings per month</li>
+                        <li class="plan-item">Up to 50 video clips</li>
+                        <li class="plan-item">AI content creation</li>
+                        <li class="plan-item">Automatic captions</li>
+                        <li class="plan-item">Downloadable content</li>
+                        <li class="plan-item">3 users</li>
+                    </ul>
+                    <a class="btn mt-8 self-start" href="#trial">Start Free Trial</a>
+                </article>
+
+                <article class="price-card">
+                    <h3 class="text-xl font-bold text-white">Pro</h3>
+                    <p class="mt-1 text-sm font-book text-muted">Busy teams and multi-speaker organizations</p>
+                    <p class="mt-6"><span class="text-[42px] leading-none font-bold text-white">$99</span><span class="text-sm font-book text-muted">/month</span></p>
+                    <ul class="mt-6 flex-1 space-y-2.5">
+                        <li class="plan-item">20 recordings per month</li>
+                        <li class="plan-item">Up to 75 video clips</li>
+                        <li class="plan-item">AI content creation</li>
+                        <li class="plan-item">Automatic captions</li>
+                        <li class="plan-item">Downloadable content</li>
+                        <li class="plan-item">Unlimited Users</li>
+                    </ul>
+                    <a class="btn-light mt-8 self-start" href="#trial">Start Free Trial</a>
+                </article>
+            </div>
+
+            <p class="mt-24 text-center text-[15px] font-medium text-white">Need more recordings or a custom plan for a large organization? <a class="text-brand hover:text-brand-hover" href="#demo">Book a demo</a></p>
+        </div>
+    </section>
+
+    <script>
+        const audiences = {
+            churches: {
+                title: 'Your sermon deserves more<br class="hidden sm:block">than Sunday.',
+                text: 'Turn one sermon into a full week of ministry content, in<br class="hidden sm:block">minutes, not hours.'
+            },
+            businesses: {
+                title: 'Your message deserves more<br class="hidden sm:block">than the meeting.',
+                text: 'Turn one recording into a full week of business content, in<br class="hidden sm:block">minutes, not hours.'
+            },
+            speakers: {
+                title: 'Your talk deserves more<br class="hidden sm:block">than the stage.',
+                text: 'Turn one talk into a full week of speaker content, in<br class="hidden sm:block">minutes, not hours.'
+            },
+            educators: {
+                title: 'Your lesson deserves more<br class="hidden sm:block">than the classroom.',
+                text: 'Turn one lesson into a full week of teaching content, in<br class="hidden sm:block">minutes, not hours.'
+            },
+            creators: {
+                title: 'Your story deserves more<br class="hidden sm:block">than one post.',
+                text: 'Turn one recording into a full week of creator content, in<br class="hidden sm:block">minutes, not hours.'
+            }
+        };
+
+        const titleEl = document.getElementById("hero-title");
+        const textEl = document.getElementById("hero-text");
+        const tabs = document.querySelectorAll("[data-audience]");
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                const next = audiences[tab.dataset.audience];
+                if (!next) return;
+
+                tabs.forEach((item) => {
+                    const active = item === tab;
+                    item.classList.toggle("btn", active);
+                    item.classList.toggle("audience-link", !active);
+                    item.setAttribute("aria-selected", active ? "true" : "false");
+                });
+
+                titleEl.innerHTML = next.title;
+                textEl.innerHTML = next.text;
+            });
+        });
+    </script>
+</body>
+</html>
