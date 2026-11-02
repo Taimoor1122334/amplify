@@ -75,17 +75,17 @@
                     </div>
 
                     <div class="lg:col-start-1 lg:row-start-3">
-                        <p class="eyebrow">Sunday sermon</p>
-                        <h2 class="mt-2 text-[22px] leading-tight font-medium text-white">The Power of Faith</h2>
-                        <p class="mt-1.5 text-sm font-book text-muted">42 Minutes</p>
+                        <p class="eyebrow" id="recording-kicker">Sunday sermon</p>
+                        <h2 class="mt-2 text-[22px] leading-tight font-medium text-white" id="recording-title">The Power of Faith</h2>
+                        <p class="mt-1.5 text-sm font-book text-muted" id="recording-length">42 Minutes</p>
                     </div>
 
                     <img src="assets/images/right arrow.svg" alt="" class="mx-auto h-8 w-8 rotate-90 lg:col-start-2 lg:row-start-2 lg:self-center lg:rotate-0">
 
-                    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-start-3 lg:row-start-2 lg:grid-cols-3">
+                    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-start-3 lg:row-start-2 lg:grid-cols-3" id="recording-outputs">
                         <li class="output-card">
                             <img src="assets/images/Clips.png" alt="" class="h-14 w-14">
-                            3 Captioned Clips
+                            Captioned Clips
                         </li>
                         <li class="output-card">
                             <img src="assets/images/devotionals.png" alt="" class="h-14 w-14">
@@ -112,14 +112,14 @@
     <section class="bg-[#05070e] py-12 lg:py-16  " id="for-churches">
         <div class="wrap grid items-start gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(240px,0.65fr)] lg:gap-x-24">
             <div>
-                <p class="eyebrow">For churches &amp; ministries</p>
-                <h2 class="heading-section mt-5">You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.</h2>
-                <p class="mt-6 max-w-[640px] text-[17px] leading-[1.65] font-book text-white">Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.</p>
-                <a class="btn mt-8" href="#trial">Amplify Your Sermon</a>
+                <p class="eyebrow" id="audience-kicker">For churches &amp; ministries</p>
+                <h2 class="heading-section mt-5" id="audience-title">You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.</h2>
+                <p class="mt-6 max-w-[640px] text-[17px] leading-[1.65] font-book text-white" id="audience-text">Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.</p>
+                <a class="btn mt-8" id="audience-cta" href="#trial">Amplify Your Sermon</a>
             </div>
             <div class="lg:pt-9">
                 <p class="kicker text-[#c8c8c8]">What Amplify creates</p>
-                <ul class="mt-6 space-y-3.5">
+                <ul class="mt-6 space-y-3.5" id="audience-features">
                     <li class="feature-item">Sermon clips with automatic captions</li>
                     <li class="feature-item">Five-day devotionals</li>
                     <li class="feature-item">Bible study materials</li>
@@ -307,32 +307,184 @@
     </section>
 
     <script>
+        const clip = "assets/images/Clips.png";
+        const devotional = "assets/images/devotionals.png";
+        const bibleStudy = "assets/images/bible study guide.png";
+        const summary = "assets/images/sermon summary.png";
+        const social = "assets/images/social posts.png";
+        const takeaways = "assets/images/key takeways.png";
+        const email = "assets/images/email copy.png";
+        const talk = "assets/images/talk summary.png";
+        const quote = "assets/images/quote cards.png";
+        const promo = "assets/images/promo content.png";
+        const lecture = "assets/images/lecture summary.png";
+        const study = "assets/images/study guide.png";
+        const discussion = "assets/images/discussion questions.png";
+        const episode = "assets/images/episod summary.png";
+        const moments = "assets/images/key moments.png";
+
         const audiences = {
             churches: {
                 title: 'Your sermon deserves more<br class="hidden sm:block">than Sunday.',
-                text: 'Turn one sermon into a full week of ministry content, in<br class="hidden sm:block">minutes, not hours.'
+                text: 'Turn one sermon into a full week of ministry content, in<br class="hidden sm:block">minutes, not hours.',
+                kicker: "Sunday sermon",
+                recording: "The Power of Faith",
+                length: "42 Minutes",
+                outputs: [
+                    [clip, "Captioned Clips"],
+                    [devotional, "5 Day Devotionals"],
+                    [bibleStudy, "Bible Study Guide"],
+                    [summary, "Sermon Summary"],
+                    [social, "Social Posts"]
+                ],
+                audience: "For churches & ministries",
+                pitch: "You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.",
+                detail: "Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.",
+                cta: "Amplify Your Sermon",
+                features: [
+                    "Sermon clips with automatic captions",
+                    "Five-day devotionals",
+                    "Bible study materials",
+                    "Sermon summaries",
+                    "Social media posts and captions"
+                ]
             },
             businesses: {
                 title: 'You created the content.<br class="hidden sm:block">Now make it work harder.',
-                text: 'Turn one webinar, demo or presentation into weeks of<br class="hidden sm:block">marketing content.'
+                text: 'Turn one webinar, demo or presentation into weeks of<br class="hidden sm:block">marketing content.',
+                kicker: "Product webinar",
+                recording: "The Digital Growth Package",
+                length: "38 Minutes",
+                outputs: [
+                    [clip, "4 Promo Clips"],
+                    [takeaways, "Key Takeaways"],
+                    [email, "Email Copy"],
+                    [summary, "Webinar Summary"],
+                    [social, "Social Posts"]
+                ],
+                audience: "For businesses & entrepreneurs",
+                pitch: "You put real time into every webinar, demo and presentation you create. Its value shouldn't end when the recording stops.",
+                detail: "Upload your video, and Amplify creates the clips, posts and summaries that keep it working for weeks. You stay the expert: every piece is built from your own words.",
+                cta: "Amplify Your Business",
+                features: [
+                    "Short-form promo clips with automatic captions",
+                    "Social media posts and captions",
+                    "Webinar and presentation summaries",
+                    "Key takeaways and highlights",
+                    "Marketing content"
+                ]
             },
             speakers: {
                 title: 'Your message shouldn\'t end<br class="hidden sm:block">when you leave the stage.',
-                text: 'Turn one keynote into weeks of shareable content.'
+                text: 'Turn one keynote into weeks of shareable content.',
+                kicker: "Keynote presentation",
+                recording: "Three Things to Change Now",
+                length: "32 Minutes",
+                outputs: [
+                    [clip, "5 Highlight Clips"],
+                    [talk, "Talk Summary"],
+                    [quote, "Quote Cards"],
+                    [promo, "Promo Content"],
+                    [social, "Social Posts"]
+                ],
+                audience: "For professional speakers",
+                pitch: "You spend hours preparing talks that inform and inspire. When the event ends, your chance to extend that impact is just beginning.",
+                detail: "Upload a keynote, workshop or session recording, and get highlight clips, quotes and promo content that keep your message working and help book your next stage.",
+                cta: "Amplify Your Message",
+                features: [
+                    "Keynote highlight clips",
+                    "Social reels and posts",
+                    "Talk summaries",
+                    "Memorable quotes and key takeaways",
+                    "Promo content for future bookings"
+                ]
             },
             educators: {
                 title: 'One lesson.<br class="hidden sm:block">More ways to learn.',
-                text: 'Turn lectures and training sessions into resources that<br class="hidden sm:block">reinforce learning.'
+                text: 'Turn lectures and training sessions into resources that<br class="hidden sm:block">reinforce learning.',
+                kicker: "Session lecture",
+                recording: "U.S. Government: Session 1",
+                length: "44 Minutes",
+                outputs: [
+                    [clip, "3 Lesson Clips"],
+                    [lecture, "Lecture Summary"],
+                    [study, "Study Guide"],
+                    [takeaways, "Key Concepts"],
+                    [discussion, "Discussion Questions"]
+                ],
+                audience: "For educators & trainers",
+                pitch: "Great teaching deserves to reach beyond the classroom. Amplify turns recorded lessons into content students and trainees can come back to.",
+                detail: "Upload a lecture, training session or instructional video, and get highlight clips, study guides and discussion materials.",
+                cta: "Amplify Your Teaching",
+                features: [
+                    "Lesson highlight clips",
+                    "Study guides and learning resources",
+                    "Lecture summaries",
+                    "Key concepts and takeaways",
+                    "Discussion materials"
+                ]
             },
             creators: {
                 title: 'Stop creating more. Start getting<br class="hidden sm:block">more from what you create.',
-                text: 'Turn long-form videos and podcasts into short-form<br class="hidden sm:block">content.'
+                text: 'Turn long-form videos and podcasts into short-form<br class="hidden sm:block">content.',
+                kicker: "Podcast episode",
+                recording: "How to Improve Your Life NOW!",
+                length: "50 Minutes",
+                outputs: [
+                    [clip, "6 Short Clips"],
+                    [episode, "Episode Summary"],
+                    [moments, "Key Moments"],
+                    [social, "Social Posts"],
+                    [promo, "Promo Posts"]
+                ],
+                audience: "For content creators",
+                pitch: "You've already done the hard part: recording. Amplify finds the moments worth sharing and turns them into content that keeps your audience connected.",
+                detail: "Upload a podcast, interview, livestream or long video, and get short clips, episode summaries and promo posts.",
+                cta: "Amplify Your Content",
+                features: [
+                    "Short-form video clips",
+                    "Social media content",
+                    "Episode summaries",
+                    "Key moments and highlights",
+                    "Promo posts"
+                ]
             }
         };
 
         const titleEl = document.getElementById("hero-title");
         const textEl = document.getElementById("hero-text");
+        const kickerEl = document.getElementById("recording-kicker");
+        const recordingEl = document.getElementById("recording-title");
+        const lengthEl = document.getElementById("recording-length");
+        const outputsEl = document.getElementById("recording-outputs");
+        const audienceKickerEl = document.getElementById("audience-kicker");
+        const audienceTitleEl = document.getElementById("audience-title");
+        const audienceTextEl = document.getElementById("audience-text");
+        const audienceCtaEl = document.getElementById("audience-cta");
+        const featuresEl = document.getElementById("audience-features");
         const tabs = document.querySelectorAll("[data-audience]");
+
+        function renderOutputs(items) {
+            outputsEl.replaceChildren(...items.map(([icon, label]) => {
+                const card = document.createElement("li");
+                card.className = "output-card";
+                const image = document.createElement("img");
+                image.src = icon;
+                image.alt = "";
+                image.className = "h-14 w-14";
+                card.append(image, label);
+                return card;
+            }));
+        }
+
+        function renderFeatures(items) {
+            featuresEl.replaceChildren(...items.map((label) => {
+                const item = document.createElement("li");
+                item.className = "feature-item";
+                item.textContent = label;
+                return item;
+            }));
+        }
 
         tabs.forEach((tab) => {
             tab.addEventListener("click", () => {
@@ -348,6 +500,15 @@
 
                 titleEl.innerHTML = next.title;
                 textEl.innerHTML = next.text;
+                kickerEl.textContent = next.kicker;
+                recordingEl.textContent = next.recording;
+                lengthEl.textContent = next.length;
+                renderOutputs(next.outputs);
+                audienceKickerEl.textContent = next.audience;
+                audienceTitleEl.textContent = next.pitch;
+                audienceTextEl.textContent = next.detail;
+                audienceCtaEl.textContent = next.cta;
+                renderFeatures(next.features);
             });
         });
 
