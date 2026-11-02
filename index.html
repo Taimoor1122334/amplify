@@ -19,7 +19,8 @@
 </head>
 <body>
     <section class="hero flex min-h-screen flex-col" id="top">
-        <header class="wrap flex flex-wrap items-center justify-between gap-y-4 py-5 lg:py-6">
+        <header class="site-header fixed inset-x-0 top-0 z-50">
+            <div class="wrap flex flex-wrap items-center justify-between gap-y-4 py-5 lg:py-6">
             <a href="#top" class="shrink-0">
                 <img src="assets/images/amplify logo.png" alt="Amplify Studio" class="h-11 w-auto sm:h-12">
             </a>
@@ -40,9 +41,10 @@
                 <a class="nav-link" href="#pricing">Pricing</a>
                 <a class="nav-link" href="#faq">FAQ</a>
             </nav>
+            </div>
         </header>
 
-        <div class="reveal flex flex-1 flex-col items-center justify-center px-6 pt-8 pb-16 text-center">
+        <div class="reveal flex flex-1 flex-col items-center justify-center px-6 pt-40 pb-16 text-center lg:pt-32">
             <p class="eyebrow">One recording. Endless possibilities.</p>
             <p class="prompt mt-4">What Do You Want To Amplify?</p>
 
@@ -59,12 +61,12 @@
 
             <div class="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
                 <a class="btn" id="trial" href="https://amplifystudio.app/request-access" target="_blank" rel="noopener noreferrer">Start your 14-day free trial</a>
-                <a class="text-link" href="#see-it-in-action">See it in action</a>
+                <a class="text-link" href="#features">See it in action</a>
             </div>
         </div>
     </section>
 
-    <section class="bg-[#05070e] py-16 lg:py-24" id="see-it-in-action">
+    <section class="bg-[#05070e] py-16 lg:py-24" id="features">
         <div class="wrap">
             <div class="panel reveal">
                 <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,340px)_auto_minmax(0,1fr)] lg:gap-x-8">
@@ -516,6 +518,11 @@
                 });
             });
         });
+
+        const header = document.querySelector(".site-header");
+        const syncHeader = () => header.classList.toggle("is-stuck", window.scrollY > 8);
+        syncHeader();
+        window.addEventListener("scroll", syncHeader, { passive: true });
 
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         document.querySelectorAll(".reveal").forEach((el) => {

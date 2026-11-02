@@ -20,6 +20,7 @@
   html {
     @apply font-sans antialiased;
     scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
   }
 
   body {
@@ -34,6 +35,16 @@
 @layer components {
   .wrap {
     @apply mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16;
+  }
+
+  .site-header {
+    transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+  }
+
+  .site-header.is-stuck {
+    background-color: rgba(5, 7, 14, 0.92);
+    border-bottom: 1px solid rgba(76, 86, 114, 0.5);
+    backdrop-filter: blur(14px);
   }
 
   .hero {
