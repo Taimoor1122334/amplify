@@ -63,6 +63,10 @@
     @apply inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-[15px] leading-none font-medium text-[#0c1322] transition-colors hover:bg-[#e6e6e6];
   }
 
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-white bg-black px-5 py-2.5 text-[15px] leading-none font-medium text-white transition-colors hover:bg-white hover:text-black;
+  }
+
   .nav-link {
     @apply text-[13px] leading-none font-book text-nav transition-colors hover:text-white sm:text-[15px];
   }
@@ -166,6 +170,7 @@
 
   .btn,
   .btn-light,
+  .btn-outline,
   .nav-link,
   .text-link,
   .audience-link,
@@ -179,12 +184,14 @@
   }
 
   .btn:hover,
-  .btn-light:hover {
+  .btn-light:hover,
+  .btn-outline:hover {
     transform: translateY(-2px);
   }
 
   .btn:active,
   .btn-light:active,
+  .btn-outline:active,
   .audience-link:active {
     transform: translateY(0) scale(0.98);
   }

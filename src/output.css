@@ -736,6 +736,37 @@
       }
     }
   }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-white);
+    background-color: var(--color-black);
+    padding-inline: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 2.5);
+    font-size: 15px;
+    --tw-leading: 1;
+    line-height: 1;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-white);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-black);
+      }
+    }
+  }
   .nav-link {
     font-size: 13px;
     --tw-leading: 1;
@@ -1018,15 +1049,15 @@
     font-weight: var(--font-weight-book);
     color: var(--color-white);
   }
-  .btn, .btn-light, .nav-link, .text-link, .audience-link, .faq-question, .output-card, .price-card, .media-frame img {
+  .btn, .btn-light, .btn-outline, .nav-link, .text-link, .audience-link, .faq-question, .output-card, .price-card, .media-frame img {
     transition-property: color, background-color, border-color, transform, box-shadow;
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .btn:hover, .btn-light:hover {
+  .btn:hover, .btn-light:hover, .btn-outline:hover {
     transform: translateY(-2px);
   }
-  .btn:active, .btn-light:active, .audience-link:active {
+  .btn:active, .btn-light:active, .btn-outline:active, .audience-link:active {
     transform: translateY(0) scale(0.98);
   }
   .faq-question:hover {
