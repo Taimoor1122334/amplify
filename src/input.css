@@ -19,6 +19,7 @@
 @layer base {
   html {
     @apply font-sans antialiased;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -150,5 +151,91 @@
 
   .faq-answer {
     @apply px-1 pt-3 pb-1 text-[15px] leading-relaxed font-book text-white;
+  }
+
+  .btn,
+  .btn-light,
+  .nav-link,
+  .text-link,
+  .audience-link,
+  .faq-question,
+  .output-card,
+  .price-card,
+  .media-frame img {
+    transition-property: color, background-color, border-color, transform, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .btn:hover,
+  .btn-light:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn:active,
+  .btn-light:active,
+  .audience-link:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .faq-question:hover {
+    border-color: #6d7a9b;
+    background-color: #141925;
+  }
+
+  .media-frame img {
+    transition-duration: 0.35s;
+  }
+
+  .media-frame:hover img {
+    transform: scale(1.08);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .output-card:hover,
+  .price-card:hover {
+    transform: translateY(-6px);
+    border-color: #6d7a9b;
+    transition-duration: 0.25s;
+  }
+
+  .motion-swap {
+    animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .motion-swap {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
