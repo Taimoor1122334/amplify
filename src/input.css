@@ -128,4 +128,27 @@
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 12.2 2.4 8.4l1.2-1.2 2.6 2.6 5.2-5.2 1.2 1.2z'/%3E%3C/svg%3E") center / contain no-repeat;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 12.2 2.4 8.4l1.2-1.2 2.6 2.6 5.2-5.2 1.2 1.2z'/%3E%3C/svg%3E") center / contain no-repeat;
   }
+
+  .faq-question {
+    @apply flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl border border-[#4C5672] bg-[#0E111A] px-5 py-5 text-left text-[20px] leading-snug font-medium text-white sm:text-[22px];
+  }
+
+  .faq-chevron {
+    @apply h-6 w-6 shrink-0;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .faq-item:not(.is-open) .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-panel {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .faq-answer {
+    @apply px-1 pt-3 pb-1 text-[15px] leading-relaxed font-book text-white;
+  }
 }
