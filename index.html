@@ -75,9 +75,9 @@
                 <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,340px)_auto_minmax(0,1fr)] lg:gap-x-8">
                     <p class="kicker text-nav lg:col-start-1 lg:row-start-1">See what one recording becomes</p>
 
-                    <div class="media-frame lg:col-start-1 lg:row-start-2">
+                    <button type="button" class="media-frame w-full lg:col-start-1 lg:row-start-2" id="play-preview" aria-label="Play preview">
                         <img src="assets/images/Play button.svg" alt="" class="h-16 w-16">
-                    </div>
+                    </button>
 
                     <div class="lg:col-start-1 lg:row-start-3">
                         <p class="eyebrow" id="recording-kicker">Sunday sermon</p>
@@ -311,6 +311,11 @@
         </div>
     </section>
 
+    <dialog class="video-dialog" id="video-dialog">
+        <button type="button" class="video-close" id="video-close" aria-label="Close">×</button>
+        <video id="preview-video" controls playsinline></video>
+    </dialog>
+
     <script>
         const clip = "assets/images/Clips.png";
         const devotional = "assets/images/devotionals.png";
@@ -345,6 +350,7 @@
                 audience: "For churches & ministries",
                 pitch: "You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.",
                 detail: "Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.",
+                video: "assets/videos/AMP-Churches.mp4",
                 cta: "Amplify Your Sermon",
                 features: [
                     "Sermon clips with automatic captions",
@@ -370,6 +376,7 @@
                 audience: "For businesses & entrepreneurs",
                 pitch: "You put real time into every webinar, demo and presentation you create. Its value shouldn't end when the recording stops.",
                 detail: "Upload your video, and Amplify creates the clips, posts and summaries that keep it working for weeks. You stay the expert: every piece is built from your own words.",
+                video: "assets/videos/AMP-Businesses.mp4",
                 cta: "Amplify Your Business",
                 features: [
                     "Short-form promo clips with automatic captions",
@@ -395,6 +402,7 @@
                 audience: "For professional speakers",
                 pitch: "You spend hours preparing talks that inform and inspire. When the event ends, your chance to extend that impact is just beginning.",
                 detail: "Upload a keynote, workshop or session recording, and get highlight clips, quotes and promo content that keep your message working and help book your next stage.",
+                video: "assets/videos/AMP-Speakers.mp4",
                 cta: "Amplify Your Message",
                 features: [
                     "Keynote highlight clips",
@@ -420,6 +428,7 @@
                 audience: "For educators & trainers",
                 pitch: "Great teaching deserves to reach beyond the classroom. Amplify turns recorded lessons into content students and trainees can come back to.",
                 detail: "Upload a lecture, training session or instructional video, and get highlight clips, study guides and discussion materials.",
+                video: "assets/videos/AMP-Educators.mp4",
                 cta: "Amplify Your Teaching",
                 features: [
                     "Lesson highlight clips",
@@ -468,6 +477,14 @@
         const audienceCtaEl = document.getElementById("audience-cta");
         const featuresEl = document.getElementById("audience-features");
         const tabs = document.querySelectorAll("[data-audience]");
+        const videoDialog = document.getElementById("video-dialog");
+        const previewVideo = document.getElementById("preview-video");
+        let currentAudience = "churches";
+
+        function closeVideo() {
+            previewVideo.pause();
+            if (videoDialog.open) videoDialog.close();
+        }
 
         function renderOutputs(items) {
             outputsEl.replaceChildren(...items.map(([icon, label]) => {
@@ -495,6 +512,7 @@
             tab.addEventListener("click", () => {
                 const next = audiences[tab.dataset.audience];
                 if (!next) return;
+                currentAudience = tab.dataset.audience;
 
                 tabs.forEach((item) => {
                     const active = item === tab;
@@ -521,6 +539,20 @@
                 });
             });
         });
+
+        document.getElementById("play-preview").addEventListener("click", () => {
+            const src = audiences[currentAudience].video;
+            if (!src) return;
+            if (previewVideo.getAttribute("src") !== src) previewVideo.src = src;
+            videoDialog.showModal();
+            previewVideo.play();
+        });
+
+        document.getElementById("video-close").addEventListener("click", closeVideo);
+        videoDialog.addEventListener("click", (event) => {
+            if (event.target === videoDialog) closeVideo();
+        });
+        videoDialog.addEventListener("close", () => previewVideo.pause());
 
         const header = document.querySelector(".site-header");
         const syncHeader = () => header.classList.toggle("is-stuck", window.scrollY > 8);

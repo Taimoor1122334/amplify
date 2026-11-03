@@ -110,7 +110,42 @@
   }
 
   .media-frame {
-    @apply flex aspect-[5/4] items-center justify-center rounded-2xl border  border-[#4C5672] bg-[#171C29];
+    @apply flex aspect-[5/4] w-full cursor-pointer items-center justify-center rounded-2xl border border-[#4C5672] bg-[#171C29];
+  }
+
+  .video-dialog {
+    position: fixed;
+    inset: 0;
+    width: min(960px, calc(100vw - 2rem));
+    height: fit-content;
+    max-height: calc(100vh - 4rem);
+    margin: auto;
+    padding: 2.5rem 0 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .video-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+  }
+
+  .video-dialog video {
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 1rem;
+    background: #000;
+  }
+
+  .video-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
   }
 
   .output-card {
