@@ -19,6 +19,9 @@
 </head>
 <body>
     <section class="hero flex min-h-screen flex-col" id="top">
+        <div class="hero-media" aria-hidden="true">
+            <img id="hero-photo" src="assets/images/home_hero_bg.png" alt="">
+        </div>
         <header class="site-header fixed inset-x-0 top-0 z-50">
             <div class="wrap flex flex-wrap items-center justify-between gap-y-4 py-5 lg:py-6">
             <a href="#top" class="shrink-0">
@@ -71,46 +74,56 @@
 
     <section class="bg-[#05070e] py-16 lg:py-24" id="features">
         <div class="wrap">
-            <div class="panel reveal">
-                <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,340px)_auto_minmax(0,1fr)] lg:gap-x-8">
-                    <p class="kicker text-nav lg:col-start-1 lg:row-start-1">See what one recording becomes</p>
-
-                    <button type="button" class="media-frame w-full lg:col-start-1 lg:row-start-2" id="play-preview" aria-label="Play preview">
-                        <img src="assets/images/Play button.svg" alt="" class="h-16 w-16">
-                    </button>
-
-                    <div class="lg:col-start-1 lg:row-start-3">
-                        <p class="eyebrow" id="recording-kicker">Sunday sermon</p>
-                        <h2 class="mt-2 text-[22px] leading-tight font-medium text-white" id="recording-title">The Power of Faith</h2>
-                        <p class="mt-1.5 text-sm font-book text-muted" id="recording-length">42 Minutes</p>
-                    </div>
-
-                    <img src="assets/images/right arrow.svg" alt="" class="mx-auto h-8 w-8 rotate-90 lg:col-start-2 lg:row-start-2 lg:self-center lg:rotate-0">
-
-                    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-start-3 lg:row-start-2 lg:grid-cols-3" id="recording-outputs">
-                        <li class="output-card">
-                            <img src="assets/images/Clips.png" alt="" class="h-14 w-14">
-                            Captioned Clips
-                        </li>
-                        <li class="output-card">
-                            <img src="assets/images/devotionals.png" alt="" class="h-14 w-14">
-                            5 Day Devotionals
-                        </li>
-                        <li class="output-card">
-                            <img src="assets/images/bible study guide.png" alt="" class="h-14 w-14">
-                            Bible Study Guide
-                        </li>
-                        <li class="output-card">
-                            <img src="assets/images/sermon summary.png" alt="" class="h-14 w-14">
-                            Sermon Summary
-                        </li>
-                        <li class="output-card">
-                            <img src="assets/images/social posts.png" alt="" class="h-14 w-14">
-                            Social Posts
-                        </li>
-                    </ul>
+            <div class="reveal flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+                <p class="eyebrow">See what one recording becomes</p>
+                <div class="audience-pill" role="tablist" aria-label="Audience">
+                    <button type="button" class="pill-tab is-active" role="tab" data-audience="churches" aria-selected="true">Churches</button>
+                    <button type="button" class="pill-tab" role="tab" data-audience="businesses" aria-selected="false">Businesses</button>
+                    <button type="button" class="pill-tab" role="tab" data-audience="speakers" aria-selected="false">Speakers</button>
+                    <button type="button" class="pill-tab" role="tab" data-audience="educators" aria-selected="false">Educators</button>
+                    <button type="button" class="pill-tab" role="tab" data-audience="creators" aria-selected="false">Creators</button>
                 </div>
             </div>
+
+            <div class="reveal mt-10 flex flex-col gap-8 lg:mt-14 lg:flex-row lg:items-center lg:justify-between">
+                <h2 class="week-heading" id="week-title">One sermon.<br class="hidden sm:block"> A whole week of ministry.</h2>
+                <button type="button" class="recording shrink-0" id="play-preview" aria-label="Play preview">
+                    <img src="assets/images/Play button.svg" alt="" class="h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]">
+                    <span>
+                        <span class="eyebrow block" id="recording-kicker">Sunday sermon</span>
+                        <span class="mt-2 block text-[18px] leading-tight font-medium text-white sm:text-[20px]" id="recording-title">The Power of Faith</span>
+                        <span class="mt-1.5 block text-sm font-book text-muted" id="recording-length">42 Minutes</span>
+                    </span>
+                </button>
+            </div>
+
+            <ol class="timeline reveal" id="timeline">
+                <li class="timeline-step">
+                    <p class="timeline-label">Sunday</p>
+                    <p class="timeline-copy">You preach. Amplify gets to work.</p>
+                </li>
+                <li class="timeline-step">
+                    <p class="timeline-label">Monday</p>
+                    <p class="timeline-copy">Captioned sermon clips go live on social.</p>
+                </li>
+                <li class="timeline-step">
+                    <p class="timeline-label">Tuesday</p>
+                    <p class="timeline-copy">Day 1 of the five-day devotional.</p>
+                </li>
+                <li class="timeline-step">
+                    <p class="timeline-label">Wednesday</p>
+                    <p class="timeline-copy">Small groups dig in with the Bible study.</p>
+                </li>
+                <li class="timeline-step">
+                    <p class="timeline-label">Thursday</p>
+                    <p class="timeline-copy">Fresh social posts keep the message moving.</p>
+                </li>
+                <li class="timeline-step">
+                    <p class="timeline-label">Friday</p>
+                    <p class="timeline-copy">The sermon summary lands in your newsletter.</p>
+                </li>
+            </ol>
+            <p class="timeline-note reveal" id="timeline-note">Next Sunday, preach again. Amplify does it all again.</p>
         </div>
     </section>
 
@@ -317,36 +330,25 @@
     </dialog>
 
     <script>
-        const clip = "assets/images/Clips.png";
-        const devotional = "assets/images/devotionals.png";
-        const bibleStudy = "assets/images/bible study guide.png";
-        const summary = "assets/images/sermon summary.png";
-        const social = "assets/images/social posts.png";
-        const takeaways = "assets/images/key takeways.png";
-        const email = "assets/images/email copy.png";
-        const talk = "assets/images/talk summary.png";
-        const quote = "assets/images/quote cards.png";
-        const promo = "assets/images/promo content.png";
-        const lecture = "assets/images/lecture summary.png";
-        const study = "assets/images/study guide.png";
-        const discussion = "assets/images/discussion questions.png";
-        const episode = "assets/images/episod summary.png";
-        const moments = "assets/images/key moments.png";
-
         const audiences = {
             churches: {
+                hero: "assets/images/home_hero_bg.png",
+                heroPosition: "68% center",
                 title: 'Your sermon deserves more <br class="hidden sm:block">than Sunday.',
                 text: 'Turn one sermon into a full week of ministry content, in <br class="hidden sm:block">minutes, not hours.',
+                weekTitle: 'One sermon.<br class="hidden sm:block"> A whole week of ministry.',
                 kicker: "Sunday sermon",
                 recording: "The Power of Faith",
                 length: "42 Minutes",
-                outputs: [
-                    [clip, "Captioned Clips"],
-                    [devotional, "5 Day Devotionals"],
-                    [bibleStudy, "Bible Study Guide"],
-                    [summary, "Sermon Summary"],
-                    [social, "Social Posts"]
+                days: [
+                    ["Sunday", "You preach. Amplify gets to work."],
+                    ["Monday", "Captioned sermon clips go live on social."],
+                    ["Tuesday", "Day 1 of the five-day devotional."],
+                    ["Wednesday", "Small groups dig in with the Bible study."],
+                    ["Thursday", "Fresh social posts keep the message moving."],
+                    ["Friday", "The sermon summary lands in your newsletter."]
                 ],
+                note: "Next Sunday, preach again. Amplify does it all again.",
                 audience: "For churches & ministries",
                 pitch: "You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.",
                 detail: "Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.",
@@ -361,18 +363,23 @@
                 ]
             },
             businesses: {
+                hero: "assets/images/business_hero_bg.png",
+                heroPosition: "70% center",
                 title: 'You created the content. <br class="hidden sm:block">Now make it work harder.',
                 text: 'Turn one webinar, demo or presentation into weeks of <br class="hidden sm:block">marketing content.',
+                weekTitle: 'One webinar.<br class="hidden sm:block"> A full week of marketing.',
                 kicker: "Product webinar",
                 recording: "The Digital Growth Package",
                 length: "38 Minutes",
-                outputs: [
-                    [clip, "4 Promo Clips"],
-                    [takeaways, "Key Takeaways"],
-                    [email, "Email Copy"],
-                    [summary, "Webinar Summary"],
-                    [social, "Social Posts"]
+                days: [
+                    ["Monday", "You host the webinar. Amplify gets to work."],
+                    ["Tuesday", "Captioned promo clips go live on LinkedIn and Instagram."],
+                    ["Wednesday", "Key takeaways become your follow-up email."],
+                    ["Thursday", "Fresh social posts keep new leads warm."],
+                    ["Friday", "The webinar summary goes up on your blog."],
+                    ["Next week", "Highlights keep selling long after the live event."]
                 ],
+                note: "Next webinar, Amplify does it all again.",
                 audience: "For businesses & entrepreneurs",
                 pitch: "You put real time into every webinar, demo and presentation you create. Its value shouldn't end when the recording stops.",
                 detail: "Upload your video, and Amplify creates the clips, posts and summaries that keep it working for weeks. You stay the expert: every piece is built from your own words.",
@@ -387,18 +394,23 @@
                 ]
             },
             speakers: {
+                hero: "assets/images/Speakers_hero_bg.png",
+                heroPosition: "28% center",
                 title: 'Your message shouldn\'t end <br class="hidden sm:block">when you leave the stage.',
                 text: 'Turn one keynote into weeks of shareable content.',
+                weekTitle: 'One keynote.<br class="hidden sm:block"> A whole week on stage.',
                 kicker: "Keynote presentation",
                 recording: "Three Things to Change Now",
                 length: "32 Minutes",
-                outputs: [
-                    [clip, "5 Highlight Clips"],
-                    [talk, "Talk Summary"],
-                    [quote, "Quote Cards"],
-                    [promo, "Promo Content"],
-                    [social, "Social Posts"]
+                days: [
+                    ["Day of", "You give the talk. Amplify gets to work."],
+                    ["Day 1", "Captioned highlight clips go live while the event is still buzzing."],
+                    ["Day 2", "Your most memorable quotes hit social."],
+                    ["Day 3", "The talk summary goes out to your list."],
+                    ["Day 4", "Reels carry your message to new audiences."],
+                    ["Day 5", "Promo content goes to planners for your next booking."]
                 ],
+                note: "Next stage, Amplify does it all again.",
                 audience: "For professional speakers",
                 pitch: "You spend hours preparing talks that inform and inspire. When the event ends, your chance to extend that impact is just beginning.",
                 detail: "Upload a keynote, workshop or session recording, and get highlight clips, quotes and promo content that keep your message working and help book your next stage.",
@@ -413,18 +425,23 @@
                 ]
             },
             educators: {
+                hero: "assets/images/Educators_hero_bg.png",
+                heroPosition: "32% center",
                 title: 'One lesson. <br class="hidden sm:block">More ways to learn.',
                 text: 'Turn lectures and training sessions into resources that <br class="hidden sm:block">reinforce learning.',
+                weekTitle: 'One lesson.<br class="hidden sm:block"> An entire week of learning.',
                 kicker: "Session lecture",
                 recording: "U.S. Government: Session 1",
                 length: "44 Minutes",
-                outputs: [
-                    [clip, "3 Lesson Clips"],
-                    [lecture, "Lecture Summary"],
-                    [study, "Study Guide"],
-                    [takeaways, "Key Concepts"],
-                    [discussion, "Discussion Questions"]
+                days: [
+                    ["Monday", "You teach the lesson. Amplify gets to work."],
+                    ["Tuesday", "Highlight clips help students review key moments."],
+                    ["Wednesday", "The study guide goes out before the quiz."],
+                    ["Thursday", "Discussion materials spark class conversation."],
+                    ["Friday", "The lecture summary catches up anyone who missed class."],
+                    ["Weekend", "Key concepts are ready for review."]
                 ],
+                note: "Next lesson, Amplify does it all again.",
                 audience: "For educators & trainers",
                 pitch: "Great teaching deserves to reach beyond the classroom. Amplify turns recorded lessons into content students and trainees can come back to.",
                 detail: "Upload a lecture, training session or instructional video, and get highlight clips, study guides and discussion materials.",
@@ -439,18 +456,23 @@
                 ]
             },
             creators: {
+                hero: "assets/images/Creators_hero_bg.png",
+                heroPosition: "center center",
                 title: 'Stop creating more. Start getting <br class="hidden sm:block">more from what you create.',
                 text: 'Turn long-form videos and podcasts into short-form <br class="hidden sm:block">content.',
+                weekTitle: 'One episode.<br class="hidden sm:block"> A whole week of content.',
                 kicker: "Podcast episode",
                 recording: "How to Improve Your Life NOW!",
                 length: "50 Minutes",
-                outputs: [
-                    [clip, "6 Short Clips"],
-                    [episode, "Episode Summary"],
-                    [moments, "Key Moments"],
-                    [social, "Social Posts"],
-                    [promo, "Promo Posts"]
+                days: [
+                    ["Monday", "You publish the episode. Amplify gets to work."],
+                    ["Tuesday", "Captioned clips go live on TikTok, Reels and Shorts."],
+                    ["Wednesday", "Key moments become posts that spark comments."],
+                    ["Thursday", "The episode summary lands in your newsletter."],
+                    ["Friday", "Promo posts bring new listeners to the full episode."],
+                    ["Weekend", "More clips keep your feed going."]
                 ],
+                note: "Next episode, Amplify does it all again.",
                 audience: "For content creators",
                 pitch: "You've already done the hard part: recording. Amplify finds the moments worth sharing and turns them into content that keeps your audience connected.",
                 detail: "Upload a podcast, interview, livestream or long video, and get short clips, episode summaries and promo posts.",
@@ -468,10 +490,13 @@
 
         const titleEl = document.getElementById("hero-title");
         const textEl = document.getElementById("hero-text");
+        const heroPhoto = document.getElementById("hero-photo");
+        const weekTitleEl = document.getElementById("week-title");
         const kickerEl = document.getElementById("recording-kicker");
         const recordingEl = document.getElementById("recording-title");
         const lengthEl = document.getElementById("recording-length");
-        const outputsEl = document.getElementById("recording-outputs");
+        const timelineEl = document.getElementById("timeline");
+        const timelineNoteEl = document.getElementById("timeline-note");
         const audienceKickerEl = document.getElementById("audience-kicker");
         const audienceTitleEl = document.getElementById("audience-title");
         const audienceTextEl = document.getElementById("audience-text");
@@ -487,17 +512,24 @@
             if (videoDialog.open) videoDialog.close();
         }
 
-        function renderOutputs(items) {
-            outputsEl.replaceChildren(...items.map(([icon, label]) => {
-                const card = document.createElement("li");
-                card.className = "output-card";
-                const image = document.createElement("img");
-                image.src = icon;
-                image.alt = "";
-                image.className = "h-14 w-14";
-                card.append(image, label);
-                return card;
+        function renderTimeline(days) {
+            timelineEl.replaceChildren(...days.map(([label, text]) => {
+                const item = document.createElement("li");
+                item.className = "timeline-step";
+                const labelEl = document.createElement("p");
+                labelEl.className = "timeline-label";
+                labelEl.textContent = label;
+                const copyEl = document.createElement("p");
+                copyEl.className = "timeline-copy";
+                copyEl.textContent = text;
+                item.append(labelEl, copyEl);
+                return item;
             }));
+        }
+
+        function setHero(src, position) {
+            heroPhoto.style.objectPosition = position;
+            if (heroPhoto.getAttribute("src") !== src) heroPhoto.src = src;
         }
 
         function renderFeatures(items) {
@@ -509,37 +541,52 @@
             }));
         }
 
-        tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                const next = audiences[tab.dataset.audience];
-                if (!next) return;
-                currentAudience = tab.dataset.audience;
+        function showAudience(key) {
+            const next = audiences[key];
+            if (!next || key === currentAudience) return;
+            currentAudience = key;
 
-                tabs.forEach((item) => {
-                    const active = item === tab;
-                    item.classList.toggle("btn", active);
-                    item.classList.toggle("audience-link", !active);
-                    item.setAttribute("aria-selected", active ? "true" : "false");
-                });
-
-                titleEl.innerHTML = next.title;
-                textEl.innerHTML = next.text;
-                kickerEl.textContent = next.kicker;
-                recordingEl.textContent = next.recording;
-                lengthEl.textContent = next.length;
-                renderOutputs(next.outputs);
-                audienceKickerEl.textContent = next.audience;
-                audienceTitleEl.textContent = next.pitch;
-                audienceTextEl.textContent = next.detail;
-                audienceCtaEl.textContent = next.cta;
-                renderFeatures(next.features);
-                [titleEl, textEl, recordingEl, outputsEl, audienceTitleEl, audienceTextEl, featuresEl].forEach((el) => {
-                    el.classList.remove("motion-swap");
-                    void el.offsetWidth;
-                    el.classList.add("motion-swap");
-                });
+            tabs.forEach((item) => {
+                const active = item.dataset.audience === key;
+                item.setAttribute("aria-selected", active ? "true" : "false");
+                if (item.classList.contains("pill-tab")) {
+                    item.classList.toggle("is-active", active);
+                    return;
+                }
+                item.classList.toggle("btn", active);
+                item.classList.toggle("audience-link", !active);
             });
+
+            titleEl.innerHTML = next.title;
+            textEl.innerHTML = next.text;
+            weekTitleEl.innerHTML = next.weekTitle;
+            kickerEl.textContent = next.kicker;
+            recordingEl.textContent = next.recording;
+            lengthEl.textContent = next.length;
+            renderTimeline(next.days);
+            timelineNoteEl.textContent = next.note;
+            setHero(next.hero, next.heroPosition);
+            audienceKickerEl.textContent = next.audience;
+            audienceTitleEl.textContent = next.pitch;
+            audienceTextEl.textContent = next.detail;
+            audienceCtaEl.textContent = next.cta;
+            renderFeatures(next.features);
+            [titleEl, textEl, weekTitleEl, recordingEl, timelineEl, timelineNoteEl, audienceTitleEl, audienceTextEl, featuresEl].forEach((el) => {
+                el.classList.remove("motion-swap");
+                void el.offsetWidth;
+                el.classList.add("motion-swap");
+            });
+        }
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => showAudience(tab.dataset.audience));
         });
+
+        Object.values(audiences).forEach((item) => {
+            const preload = new Image();
+            preload.src = item.hero;
+        });
+        heroPhoto.style.objectPosition = audiences.churches.heroPosition;
 
         document.getElementById("play-preview").addEventListener("click", () => {
             const src = audiences[currentAudience].video;
