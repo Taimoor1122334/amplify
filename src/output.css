@@ -10,7 +10,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
-    --container-3xl: 48rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -196,9 +195,6 @@
   .top-0 {
     top: 0px;
   }
-  .z-50 {
-    z-index: 50;
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -265,9 +261,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-3xl {
-    max-width: var(--container-3xl);
-  }
   .max-w-\[640px\] {
     max-width: 640px;
   }
@@ -294,6 +287,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -347,10 +343,10 @@
     margin-block-start: calc(calc(var(--spacing) * 3.5) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 3.5) * calc(1 - var(--tw-space-y-reverse)));
   }
-  :where(.space-y-5 > :not(:last-child)) {
+  :where(.space-y-6 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+    margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
@@ -382,6 +378,9 @@
   .bg-brand {
     background-color: var(--color-brand);
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .px-2\.5 {
     padding-inline: calc(var(--spacing) * 2.5);
   }
@@ -402,6 +401,9 @@
   }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
   }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
@@ -498,8 +500,14 @@
     --tw-tracking: -0.02em;
     letter-spacing: -0.02em;
   }
-  .text-\[\#c8c8c8\] {
-    color: #c8c8c8;
+  .text-\[\#3a3d44\] {
+    color: #3a3d44;
+  }
+  .text-\[\#5e6570\] {
+    color: #5e6570;
+  }
+  .text-\[\#111318\] {
+    color: #111318;
   }
   .text-brand {
     color: var(--color-brand);
@@ -544,9 +552,6 @@
     }
     .lg\:mt-14 {
       margin-top: calc(var(--spacing) * 14);
-    }
-    .lg\:mt-36 {
-      margin-top: calc(var(--spacing) * 36);
     }
     .lg\:flex {
       display: flex;
@@ -639,6 +644,7 @@
     }
   }
   .site-header {
+    z-index: 200;
     transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
   }
   .site-header.is-stuck {
@@ -648,7 +654,7 @@
   }
   .hero {
     position: relative;
-    z-index: 0;
+    z-index: 40;
     background-color: #05070e;
   }
   .hero-media {
@@ -750,6 +756,7 @@
     }
   }
   .nav-link {
+    position: relative;
     font-size: 13px;
     --tw-leading: 1;
     line-height: 1;
@@ -767,6 +774,21 @@
     @media (width >= 40rem) {
       font-size: 15px;
     }
+  }
+  .nav-link.is-active {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-white);
+  }
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.45rem;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #0077ff;
   }
   .audience-link {
     display: inline-flex;
@@ -1072,6 +1094,9 @@
     line-height: 1;
     cursor: pointer;
   }
+  .on-light .heading-section {
+    color: #111318;
+  }
   .feature-item {
     display: flex;
     align-items: flex-start;
@@ -1082,6 +1107,9 @@
     --tw-font-weight: var(--font-weight-book);
     font-weight: var(--font-weight-book);
     color: var(--color-white);
+  }
+  .on-light .feature-item {
+    color: #16181d;
   }
   .feature-item::before {
     content: "";
@@ -1142,25 +1170,32 @@
     border-radius: var(--radius-xl);
     border-style: var(--tw-border-style);
     border-width: 1px;
-    border-color: #4C5672;
-    background-color: #0E111A;
+    border-color: #d7dbe2;
+    background-color: var(--color-white);
     padding-inline: calc(var(--spacing) * 5);
-    padding-block: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 4);
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     --tw-leading: var(--leading-snug);
     line-height: var(--leading-snug);
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-white);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: #111318;
     @media (width >= 40rem) {
-      font-size: 22px;
+      padding-inline: calc(var(--spacing) * 6);
+    }
+    @media (width >= 40rem) {
+      padding-block: 1.15rem;
+    }
+    @media (width >= 40rem) {
+      font-size: 20px;
     }
   }
   .faq-chevron {
-    height: calc(var(--spacing) * 6);
-    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 5);
+    width: calc(var(--spacing) * 5);
     flex-shrink: 0;
+    color: #8b9098;
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .faq-item:not(.is-open) .faq-chevron {
@@ -1172,15 +1207,21 @@
     transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .faq-answer {
-    padding-inline: var(--spacing);
-    padding-top: calc(var(--spacing) * 3);
-    padding-bottom: var(--spacing);
+    padding-inline: calc(var(--spacing) * 5);
+    padding-top: calc(var(--spacing) * 4);
+    padding-bottom: calc(var(--spacing) * 2);
     font-size: 15px;
-    --tw-leading: var(--leading-relaxed);
-    line-height: var(--leading-relaxed);
+    --tw-leading: 1.65;
+    line-height: 1.65;
     --tw-font-weight: var(--font-weight-book);
     font-weight: var(--font-weight-book);
-    color: var(--color-white);
+    color: #5c616a;
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+    @media (width >= 40rem) {
+      font-size: 16px;
+    }
   }
   .btn, .btn-light, .btn-outline, .nav-link, .text-link, .audience-link, .pill-tab, .faq-question, .price-card {
     transition-property: color, background-color, border-color, transform, box-shadow;
@@ -1194,8 +1235,8 @@
     transform: translateY(0) scale(0.98);
   }
   .faq-question:hover {
-    border-color: #6d7a9b;
-    background-color: #141925;
+    border-color: #c5cad3;
+    background-color: #fff;
   }
   .recording img {
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);

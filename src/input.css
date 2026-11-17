@@ -38,6 +38,7 @@
   }
 
   .site-header {
+    z-index: 200;
     transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
   }
 
@@ -49,7 +50,7 @@
 
   .hero {
     position: relative;
-    z-index: 0;
+    z-index: 40;
     background-color: #05070e;
   }
 
@@ -97,7 +98,22 @@
   }
 
   .nav-link {
-    @apply text-[13px] leading-none font-book text-nav transition-colors hover:text-white sm:text-[15px];
+    @apply relative text-[13px] leading-none font-book text-nav transition-colors hover:text-white sm:text-[15px];
+  }
+
+  .nav-link.is-active {
+    @apply font-medium text-white;
+  }
+
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.45rem;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #0077ff;
   }
 
   .audience-link {
@@ -240,8 +256,16 @@
     cursor: pointer;
   }
 
+  .on-light .heading-section {
+    @apply text-[#111318];
+  }
+
   .feature-item {
     @apply flex items-start gap-3 text-[15px] leading-snug font-book text-white;
+  }
+
+  .on-light .feature-item {
+    @apply text-[#16181d];
   }
 
   .feature-item::before {
@@ -269,11 +293,11 @@
   }
 
   .faq-question {
-    @apply flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl border border-[#4C5672] bg-[#0E111A] px-5 py-5 text-left text-[20px] leading-snug font-medium text-white sm:text-[22px];
+    @apply flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl border border-[#d7dbe2] bg-white px-5 py-4 text-left text-[18px] leading-snug font-bold text-[#111318] sm:px-6 sm:py-[1.15rem] sm:text-[20px];
   }
 
   .faq-chevron {
-    @apply h-6 w-6 shrink-0;
+    @apply h-5 w-5 shrink-0 text-[#8b9098];
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -288,7 +312,7 @@
   }
 
   .faq-answer {
-    @apply px-1 pt-3 pb-1 text-[15px] leading-relaxed font-book text-white;
+    @apply px-5 pt-4 pb-2 text-[15px] leading-[1.65] font-book text-[#5c616a] sm:px-6 sm:text-[16px];
   }
 
   .btn,
@@ -319,8 +343,8 @@
   }
 
   .faq-question:hover {
-    border-color: #6d7a9b;
-    background-color: #141925;
+    border-color: #c5cad3;
+    background-color: #fff;
   }
 
   .recording img {

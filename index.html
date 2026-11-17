@@ -22,14 +22,14 @@
         <div class="hero-media" aria-hidden="true">
             <img id="hero-photo" src="assets/images/home_hero_bg.png" alt="">
         </div>
-        <header class="site-header fixed inset-x-0 top-0 z-50">
+        <header class="site-header fixed inset-x-0 top-0">
             <div class="wrap flex flex-wrap items-center justify-between gap-y-4 py-5 lg:py-6">
             <a href="#top" class="shrink-0">
                 <img src="assets/images/amplify logo.png" alt="Amplify Studio" class="h-11 w-auto sm:h-12">
             </a>
             <div class="flex items-center gap-8 lg:gap-14">
                 <nav class="hidden items-center gap-8 lg:flex lg:gap-14" aria-label="Primary">
-                    <a class="nav-link" href="#top">Home</a>
+                    <a class="nav-link is-active" href="#top" aria-current="true">Home</a>
                     <a class="nav-link" href="#features">Features</a>
                     <a class="nav-link" href="#how-it-works">How it Works</a>
                     <a class="nav-link" href="#pricing">Pricing</a>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <nav class="flex w-full basis-full flex-wrap items-center justify-end gap-x-4 gap-y-2 lg:hidden" aria-label="Primary">
-                <a class="nav-link" href="#top">Home</a>
+                <a class="nav-link is-active" href="#top" aria-current="true">Home</a>
                 <a class="nav-link" href="#features">Features</a>
                 <a class="nav-link" href="#how-it-works">How it Works</a>
                 <a class="nav-link" href="#pricing">Pricing</a>
@@ -127,16 +127,16 @@
         </div>
     </section>
 
-    <section class="bg-[#05070e] py-12 lg:py-16  " id="for-churches">
+    <section class="on-light bg-white py-12 lg:py-16" id="for-churches">
         <div class="wrap grid items-start gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(240px,0.65fr)] lg:gap-x-24">
             <div class="reveal">
                 <p class="eyebrow" id="audience-kicker">For churches &amp; ministries</p>
                 <h2 class="heading-section mt-5" id="audience-title">You spend the week studying, praying and preparing a message that changes lives. Its impact shouldn't end when the service does.</h2>
-                <p class="mt-6 max-w-[640px] text-[17px] leading-[1.65] font-book text-white" id="audience-text">Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.</p>
+                <p class="mt-6 max-w-[640px] text-[17px] leading-[1.65] font-book text-[#3a3d44]" id="audience-text">Upload your sermon, and Amplify creates the clips, devotionals and study materials that carry it all week long. You stay the voice: every piece is built from your own words.</p>
                 <a class="btn mt-8" id="audience-cta" href="https://amplifystudio.app/request-access" target="_blank" rel="noopener noreferrer">Amplify Your Sermon</a>
             </div>
             <div class="reveal lg:pt-9">
-                <p class="kicker text-[#c8c8c8]">What Amplify creates</p>
+                <p class="kicker text-[#5e6570]">What Amplify creates</p>
                 <ul class="mt-6 space-y-3.5" id="audience-features">
                     <li class="feature-item">Sermon clips with automatic captions</li>
                     <li class="feature-item">Five-day devotionals</li>
@@ -148,34 +148,36 @@
         </div>
     </section>
 
-    <section class="bg-[#05070e] py-16 lg:py-24" id="how-it-works">
+    <section class="on-light bg-white py-16 lg:py-24" id="how-it-works">
         <div class="wrap">
             <p class="eyebrow">How it works</p>
-            <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Three steps. Endless possibilities.</h2>
+            <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-[#111318] text-[clamp(2rem,3.2vw,3rem)]">Three steps. Endless possibilities.</h2>
 
             <ol class="mt-10 grid gap-10 sm:grid-cols-3 lg:mt-12 lg:gap-14">
                 <li class="reveal">
                     <p class="text-sm font-bold text-brand">01</p>
-                    <h3 class="mt-2 text-lg font-bold text-white">Upload</h3>
-                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Add a video or audio recording, or paste a link. [CONFIRM formats, YouTube/Vimeo links and maximum length]</p>
+                    <h3 class="mt-2 text-lg font-bold text-[#111318]">Upload</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-[#3a3d44]">Add a video or audio recording, or paste a link. [CONFIRM formats, YouTube/Vimeo links and maximum length]</p>
                 </li>
                 <li class="reveal">
                     <p class="text-sm font-bold text-brand">02</p>
-                    <h3 class="mt-2 text-lg font-bold text-white">Transform</h3>
-                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Amplify finds the strongest moments and creates clips and written content from your own words.</p>
+                    <h3 class="mt-2 text-lg font-bold text-[#111318]">Transform</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-[#3a3d44]">Amplify finds the strongest moments and creates clips and written content from your own words.</p>
                 </li>
                 <li class="reveal">
                     <p class="text-sm font-bold text-brand">03</p>
-                    <h3 class="mt-2 text-lg font-bold text-white">Share</h3>
-                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-white">Review everything, edit what you want, then download and share it wherever your audience is.</p>
+                    <h3 class="mt-2 text-lg font-bold text-[#111318]">Share</h3>
+                    <p class="mt-2 max-w-xs text-[15px] leading-relaxed font-book text-[#3a3d44]">Review everything, edit what you want, then download and share it wherever your audience is.</p>
                 </li>
             </ol>
+        </div>
+    </section>
 
-            <div class="reveal mx-auto mt-24 max-w-3xl text-center lg:mt-36">
-                <h2 class="font-bold leading-[1.15] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Less time creating.<br>More time making an impact.</h2>
-                <p class="mx-auto mt-6 max-w-[680px] text-[17px] leading-[1.65] font-book text-white">Your time is valuable. Amplify takes the hours out of rewatching recordings, cutting clips and rewriting the same message for every channel. Whether you're preaching, teaching, presenting or building a business, you get to focus on what you do best.</p>
-                <p class="mt-6 text-[17px] font-medium text-brand">You create the message. Amplify multiplies its reach.</p>
-            </div>
+    <section class="bg-[#05070e] py-20 text-center lg:py-28">
+        <div class="reveal wrap">
+            <h2 class="font-bold leading-[1.15] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Less time creating.<br>More time making an impact.</h2>
+            <p class="mx-auto mt-6 max-w-[680px] text-[17px] leading-[1.65] font-book text-white">Your time is valuable. Amplify takes the hours out of rewatching recordings, cutting clips and rewriting the same message for every channel. Whether you're preaching, teaching, presenting or building a business, you get to focus on what you do best.</p>
+            <p class="mt-6 text-[17px] font-medium text-brand">You create the message. Amplify multiplies its reach.</p>
         </div>
     </section>
 
@@ -241,12 +243,12 @@
         </div>
     </section>
 
-    <section class="bg-[#05070e] py-16 lg:py-24" id="faq">
+    <section class="bg-white py-16 lg:py-24" id="faq">
         <div class="wrap">
             <p class="eyebrow">Faqs</p>
-            <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-white text-[clamp(2rem,3.2vw,3rem)]">Frequently Asked Questions</h2>
+            <h2 class="mt-4 font-bold leading-[1.1] tracking-[-0.02em] text-[#111318] text-[clamp(2rem,3.2vw,3rem)]">Frequently Asked Questions</h2>
 
-            <div class="mt-8 space-y-5">
+            <div class="mt-8 space-y-6">
                 <div class="faq-item reveal">
                     <button class="faq-question" type="button" aria-expanded="false">
                         <span>Is it okay to use AI in ministry?</span>
@@ -603,9 +605,47 @@
         videoDialog.addEventListener("close", () => previewVideo.pause());
 
         const header = document.querySelector(".site-header");
-        const syncHeader = () => header.classList.toggle("is-stuck", window.scrollY > 8);
+        const navLinks = document.querySelectorAll('a.nav-link[href^="#"]');
+        const navSections = ["top", "features", "how-it-works", "pricing", "faq"]
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+
+        function sectionTop(section) {
+            let top = 0;
+            let node = section;
+            while (node) {
+                top += node.offsetTop;
+                node = node.offsetParent;
+            }
+            return top;
+        }
+
+        function syncNav() {
+            const line = window.scrollY + header.offsetHeight + 24;
+            const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            let current = navSections[0];
+            if (atBottom) {
+                current = navSections[navSections.length - 1];
+            } else {
+                navSections.forEach((section) => {
+                    if (sectionTop(section) <= line) current = section;
+                });
+            }
+            navLinks.forEach((link) => {
+                const active = link.getAttribute("href") === `#${current.id}`;
+                link.classList.toggle("is-active", active);
+                if (active) link.setAttribute("aria-current", "true");
+                else link.removeAttribute("aria-current");
+            });
+        }
+
+        const syncHeader = () => {
+            header.classList.toggle("is-stuck", window.scrollY > 8);
+            syncNav();
+        };
         syncHeader();
         window.addEventListener("scroll", syncHeader, { passive: true });
+        window.addEventListener("resize", syncNav);
 
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         document.querySelectorAll(".reveal").forEach((el) => {
